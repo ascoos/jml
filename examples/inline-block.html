@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Sample Page</title>
+    <link rel="stylesheet" href="https://bootlib.ascoos.com/dist/bootlib-1.0.0a4.min.css">
+    <link rel="stylesheet" href="https://bootlib.ascoos.com/dist/bootlib-1.0.0a4.ext.min.css">    
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .header {
+            text-align: center;
+            color: #333;
+            padding: 10px;
+            border-bottom: 2px solid #000;
+        }
+        .footer {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Ascoos OS Demo</h1>
+            <p>This is a complex demo with nested elements and interactivity.
+
+                It also supports multi-line text.
+            </p>
+        </div>
+        <div class="box">
+            <jml>
+                style {`.inner {font-size: 1.4em;}`}
+                div:class('inner') {
+                p:style('color: brown;') {`Το παράδειγμα αυτό υλοποιεί την δυναμική inline φόρτωση εγγράφων JML μέσα σε HTML block`}
+                br
+                p {
+                    `test BR`
+                    br
+                    `OK`
+                }
+                }
+            </jml>
+        </div>
+        <div class="content">
+            <h2>User Registration</h2>
+            <form onsubmit="return validateForm()" method="POST" action="/submit">
+                <div class="form-group"><label for="name">Name:</label><input type="text" id="name" name="name" required=""></div>
+                <div class="form-group"><label for="email">Email:</label><input type="email" id="email" name="email" required=""></div>
+                <div class="form-group"><label for="country">Country:</label><select id="country" name="country">
+                        <option value="us">United States</option>
+                        <option value="gr">Greece</option>
+                        <option value="de">Germany</option>
+                    </select>
+                </div>
+                <button class="blib-btn-primary blib-text-lg" type="submit">Submit</button>
+            </form><br>
+            <div class="footer">
+                <p>© 2025 Ascoos OS. All rights reserved.</p><br><a href="https://ascoos.com">Visit our site</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="content-script.js"></script> -->
+</body>
+</html>

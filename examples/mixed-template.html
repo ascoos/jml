@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<script type="text/jml" id="page-jml">
+html:lang('en') {
+  head {
+    meta:charset('UTF-8')
+    meta:name('viewport'),content('width=device-width, initial-scale=1.0')
+    title {`Advanced Sample Page`}
+    style {
+      `.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .header {
+            text-align: center;
+            color: #333;
+            padding: 10px;
+            border-bottom: 2px solid #000;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }`
+    }
+    script {
+      `function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            if (name === "" || email === "") {
+                alert("Please fill out all fields!");
+                return false;
+            }
+            return true;
+        }`
+    }
+  }
+  body {
+    div:class('container') {
+      div:class('header') {
+        h1 {`Welcome to Ascoos OS Demo`}
+        p {`This is a complex demo with nested elements and interactivity.
+        
+        It also supports multi-line text.
+        `}
+      }
+      div:class('content') {
+        h2 {`User Registration`}
+        form:onsubmit('return validateForm()'),method('POST'),action('/submit') {
+          div:class('form-group') {
+            label:for('name') {`Name:`}
+            input:type('text'),id('name'),name('name'),required('')
+          }
+          div:class('form-group') {
+            label:for('email') {`Email:`}
+            input:type('email'),id('email'),name('email'),required('')
+          }
+          div:class('form-group') {
+            label:for('country') {`Country:`}
+            select:id('country'),name('country') {
+              option:value('us') {`United States`}
+              option:value('gr') {`Greece`}
+              option:value('de') {`Germany`}
+            }
+          }
+          button:type('submit') {`Submit`}
+        }
+        br 
+        div:class('footer') {
+          p {`© 2025 Ascoos OS. All rights reserved.`} 
+          br
+          a:href('https://ascoos.com') {`Visit our site`}
+        }
+      }
+    }
+  }
+}
+</script>
+
+<div class="box">
+  <jml>
+  div:class('inner') {
+    p:style('color: brown;') {`Dynamic JML block`}
+  }
+  </jml>
+</div>
+
+<!-- <script src="content-script.js"></script> -->
